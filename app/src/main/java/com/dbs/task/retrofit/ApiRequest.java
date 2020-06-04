@@ -1,6 +1,7 @@
 package com.dbs.task.retrofit;
 
 
+import com.dbs.task.response.TaskDetailsResponse;
 import com.dbs.task.response.TaskListResponse;
 
 import java.util.List;
@@ -14,6 +15,13 @@ public interface ApiRequest {
 
     @GET("/article")
     Call<List<TaskListResponse>> getTaskList(
+
+    );
+
+    @GET("/article/{id}")
+    Call<TaskDetailsResponse> getTaskDetailsById(
+
+            @Path("id") int id
 
     );
 
